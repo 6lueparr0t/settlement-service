@@ -1,38 +1,7 @@
 # settlement-service
+- 유튜브 채널 & 크리에이터 정산 시스템
 
-## 테이블 설계
-
-* **CHANNEL (TBL_CHANNEL_INFO)**
-
-| 필드명            | 자료형          | 설명          |
-|----------------|--------------|-------------|
-| **ID**         | Long         | Primary Key |
-| **NAME**       | String(500)  | 채널명         |
-| **DESC**       | String(4000) | 설명          |
-| **CDTM**       | DateTime     | 생성 날짜       |
-| **UDTM**       | DateTime     | 수정 날짜       |
-
-* **CREATOR (TBL_CREATOR_INFO)**
-
-| 필드명         | 자료형         | 설명               |
-|-------------|-------------|------------------|
-| **ID**      | Long        | Primary Key      |
-| **NAME**    | String(200) | 닉네임              |
-| **UID**     | String(200) | 아이디              |
-| **RS**      | Float       | Revenue Share 비율 |
-| **CHANNEL** | Integer     | 채널 ID            |
-| **CDTM**    | DateTime    | 생성 날짜            |
-| **UDTM**    | DateTime    | 수정 날짜            |
-
-* **REVENUE (TBL_REVENUE)**
-
-| 필드명          | 자료형      | 설명          |
-|--------------|----------|-------------|
-| **ID**       | Long     | Primary Key |
-| **CHANNEL**  | Integer  | 채널 ID       |
-| **PROFIT**   | Long     | 발생 수익       |
-| **CDTM**     | DateTime | 생성 날짜       |
-| **UDTM**     | DateTime | 수정 날짜       |
+---
 
 ## API 설계 및 개발 항목
 
@@ -248,3 +217,39 @@ curl --location --request GET 'http://localhost:8080/channel/revenue/inquiry/tot
     "status": 200
 }
 ```
+
+---
+
+## 테이블 설계
+
+* **CHANNEL (TBL_CHANNEL_INFO)**
+
+| 필드명            | 자료형          | 설명          |
+|----------------|--------------|-------------|
+| **ID**         | Long         | Primary Key |
+| **NAME**       | String(500)  | 채널명         |
+| **DESC**       | String(4000) | 설명          |
+| **CDTM**       | DateTime     | 생성 날짜       |
+| **UDTM**       | DateTime     | 수정 날짜       |
+
+* **CREATOR (TBL_CREATOR_INFO)**
+
+| 필드명         | 자료형         | 설명               |
+|-------------|-------------|------------------|
+| **ID**      | Long        | Primary Key      |
+| **NAME**    | String(200) | 닉네임              |
+| **UID**     | String(200) | 아이디              |
+| **RS**      | Float       | Revenue Share 비율 |
+| **CHANNEL** | Integer     | 채널 ID            |
+| **CDTM**    | DateTime    | 생성 날짜            |
+| **UDTM**    | DateTime    | 수정 날짜            |
+
+* **REVENUE (TBL_REVENUE)**
+
+| 필드명          | 자료형      | 설명          |
+|--------------|----------|-------------|
+| **ID**       | Long     | Primary Key |
+| **CHANNEL**  | Integer  | 채널 ID       |
+| **PROFIT**   | Long     | 발생 수익       |
+| **CDTM**     | DateTime | 생성 날짜       |
+| **UDTM**     | DateTime | 수정 날짜       |
