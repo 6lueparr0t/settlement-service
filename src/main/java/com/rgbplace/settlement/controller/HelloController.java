@@ -53,7 +53,6 @@ public class HelloController {
         return new ResponseEntity<>(null, HttpStatus.METHOD_NOT_ALLOWED);
     }
 
-
     @DeleteMapping(value = "/healthcheck")
     public ResponseEntity<String> healthcheckDelete() {
         return new ResponseEntity<>(null, HttpStatus.METHOD_NOT_ALLOWED);
